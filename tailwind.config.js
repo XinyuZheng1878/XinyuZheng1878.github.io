@@ -7,14 +7,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#6C63FF',
-        secondary: '#00D9FF',
-        accent: '#FF6B9D',
-        dark: '#0a0a1a',
-        darker: '#060612',
-        card: 'rgba(255,255,255,0.05)',
+        accent: '#1a56db',
+        'accent-light': '#e8f0fe',
       },
       fontFamily: {
+        serif: ['Georgia', 'Noto Serif SC', 'serif'],
         sans: ['Inter', 'system-ui', 'sans-serif'],
         mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
       },
