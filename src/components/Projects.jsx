@@ -1,58 +1,42 @@
-import { FiGithub, FiExternalLink } from 'react-icons/fi';
-
 const projects = [
   {
-    name: 'Project Name',
-    desc: 'A brief description of what this project does and why it matters. Built with Python and PyTorch.',
-    links: { github: 'https://github.com/XinyuZheng1878', demo: null },
+    name: 'OpenReason',
+    desc: '一个开源的多模态推理工具包，已获得 2k+ Stars。',
+    icon: (
+      <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.8"><path strokeLinecap="round" strokeLinejoin="round" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg>
+    ),
   },
   {
-    name: 'Another Project',
-    desc: 'Short description of another interesting project. Uses React, Node.js, and PostgreSQL.',
-    links: { github: 'https://github.com/XinyuZheng1878', demo: '#' },
-  },
-  {
-    name: 'Open Source Tool',
-    desc: 'A developer tool that helps with automated testing and code analysis.',
-    links: { github: 'https://github.com/XinyuZheng1878', demo: null },
+    name: 'FastEmbed',
+    desc: '轻量高效的文本表示学习库，支持边缘设备部署。',
+    icon: (
+      <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.8"><path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+    ),
   },
 ];
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-16 px-6">
-      <div className="max-w-3xl mx-auto">
-        <h2 className="text-xl font-serif font-bold text-gray-900 mb-2">Projects</h2>
-        <div className="section-divider mb-8" />
-
-        <div className="grid md:grid-cols-2 gap-5">
-          {projects.map((proj, i) => (
-            <div key={i} className="border border-gray-200 rounded-lg p-5 hover:border-gray-300 transition-colors">
-              <h3 className="font-semibold text-gray-800 mb-2">{proj.name}</h3>
-              <p className="text-sm text-gray-500 leading-relaxed mb-4">{proj.desc}</p>
-              <div className="flex items-center gap-3">
-                <a
-                  href={proj.links.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-xs text-gray-400 hover:text-accent transition-colors inline-flex items-center gap-1"
-                >
-                  <FiGithub /> Code
-                </a>
-                {proj.links.demo && (
-                  <a
-                    href={proj.links.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-xs text-gray-400 hover:text-accent transition-colors inline-flex items-center gap-1"
-                  >
-                    <FiExternalLink /> Demo
-                  </a>
-                )}
-              </div>
+    <section id="projects" className="mb-14">
+      <h2 className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-accent">
+        <span className="h-px w-6 bg-accent/40"></span>项目
+      </h2>
+      <div className="mt-6 grid gap-4 sm:grid-cols-2">
+        {projects.map((proj) => (
+          <a
+            key={proj.name}
+            href="#"
+            className="group rounded-2xl border border-black/5 bg-white p-5 shadow-sm transition-all hover:-translate-y-1 hover:border-accent/30 hover:shadow-md"
+          >
+            <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-accent-soft text-accent">
+              {proj.icon}
             </div>
-          ))}
-        </div>
+            <h3 className="font-serif text-base font-semibold text-ink transition-colors group-hover:text-accent-dark">
+              {proj.name}
+            </h3>
+            <p className="mt-1 text-sm leading-relaxed text-gray-500">{proj.desc}</p>
+          </a>
+        ))}
       </div>
     </section>
   );
