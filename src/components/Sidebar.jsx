@@ -7,7 +7,7 @@ export default function Sidebar() {
         <div className="relative mb-7 w-fit">
           <div className="absolute inset-0 rounded-full bg-accent/10 blur-xl"></div>
           <img
-            src="https://images.unsplash.com/photo-1607346256330-dee7af15f7c5?q=80&w=400&auto=format&fit=crop"
+            src="IMG_9176.jpg"
             alt="Xinyu Zheng 的头像"
             className="relative h-36 w-36 rounded-full object-cover ring-4 ring-white shadow-lg"
           />
