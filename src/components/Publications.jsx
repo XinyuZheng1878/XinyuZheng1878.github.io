@@ -1,20 +1,20 @@
 const papers = [
   {
-    title: '面向多模态推理的层次化表示学习框架',
-    authors: 'Xinyu Zheng, 李四, 王五, 赵六',
-    venue: 'Conference on Neural Information Processing Systems (NeurIPS), 2025',
+    title: '',
+    authors: '',
+    venue: '',
     links: { pdf: '#', code: '#', bibtex: '#' },
   },
   {
-    title: '可解释性驱动的深度神经网络注意力机制研究',
-    authors: '张三, Xinyu Zheng, 陈七',
-    venue: 'International Conference on Machine Learning (ICML), 2024',
+    title: '',
+    authors: '',
+    venue: '',
     links: { pdf: '#', code: '#', bibtex: null },
   },
   {
-    title: '低资源场景下的跨语言迁移学习方法',
-    authors: 'Xinyu Zheng, 孙八',
-    venue: 'Annual Meeting of the Association for Computational Linguistics (ACL), 2023',
+    title: '',
+    authors: '',
+    venue: '',
     links: { pdf: '#', code: null, bibtex: '#' },
   },
 ];

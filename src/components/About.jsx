@@ -8,12 +8,11 @@ export default function About() {
         </h2>
         <div className="mt-5 space-y-4 text-[15px] leading-relaxed text-gray-500">
           <p>
-            我是 <span className="font-medium text-ink">Xinyu Zheng</span>，某某大学计算机科学与技术学院的博士研究生，导师为 XXX 教授。我的研究兴趣位于机器学习与自然语言处理的交叉领域，特别关注
-            <span className="font-medium text-ink">表示学习</span>、
-            <span className="font-medium text-ink">多模态推理</span>以及模型的可解释性。
+            我是 <span className="font-medium text-ink">Xinyu Zheng</span>，复旦大学23级本科生，在数学科学学院完成了三年的基础数学学习，刚刚进入AI方面的学习。目前对LLM，agent 自进化较为感兴趣。
+            
           </p>
           <p>
-            在此之前，我于某某大学获得学士学位。我相信优雅的算法应当同时具备理论上的简洁与工程上的实用，并热衷于将研究成果转化为真实世界中可用的系统。
+            
           </p>
         </div>
       </section>
@@ -25,7 +24,7 @@ export default function About() {
           <p className="mt-2 text-[15px] leading-relaxed text-gray-500">
             我始终对新的研究合作与学术交流保持开放。如果你对我的工作感兴趣，或希望探讨潜在的合作机会，欢迎随时通过邮件与我联系。
           </p>
-          <a href="mailto:3190184754@qq.com" className="mt-4 inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2 text-sm font-medium text-white transition-colors hover:bg-accent-dark">
+          <a href="mailto:23307110147@m.fudan.edu.cn" className="mt-4 inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2 text-sm font-medium text-white transition-colors hover:bg-accent-dark">
             取得联系
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
           </a>
