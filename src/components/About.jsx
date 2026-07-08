@@ -9,10 +9,10 @@ export default function About() {
         <div className="mt-5 space-y-4 text-[15px] leading-relaxed text-gray-500">
           <p>
             我是 <span className="font-medium text-ink">Xinyu Zheng</span>，复旦大学23级本科生，在数学科学学院完成了三年的基础数学学习，刚刚进入AI方面的学习。目前对LLM，agent 自进化较为感兴趣。
-            
+            希望做一些有意义或有趣的研究。
           </p>
           <p>
-            
+            出于对LLM底层逻辑的好奇，目前正在学习《build LLM from scratch》，相关学习代码正在同步github中。
           </p>
         </div>
       </section>
@@ -22,7 +22,7 @@ export default function About() {
         <div className="rounded-2xl bg-accent-soft/70 p-6 ring-1 ring-accent/10">
           <h3 className="font-serif text-lg font-semibold text-accent-dark">欢迎合作</h3>
           <p className="mt-2 text-[15px] leading-relaxed text-gray-500">
-            我始终对新的研究合作与学术交流保持开放。如果你对我的工作感兴趣，或希望探讨潜在的合作机会，欢迎随时通过邮件与我联系。
+            我认为与他人交流是一个非常好的学习方式，欢迎交流。
           </p>
           <a href="mailto:23307110147@m.fudan.edu.cn" className="mt-4 inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2 text-sm font-medium text-white transition-colors hover:bg-accent-dark">
             取得联系
