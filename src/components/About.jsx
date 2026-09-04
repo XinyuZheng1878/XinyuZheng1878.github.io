@@ -1,53 +1,104 @@
+const Arrow = () => (
+  <svg className="h-4 w-4" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.8">
+    <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14m-5-5 5 5-5 5" />
+  </svg>
+);
+
+const questions = [
+  {
+    number: '01',
+    title: 'Perception → Action',
+    text: 'How can vision-language representations become action-grounded, rather than remain descriptions of the world?',
+  },
+  {
+    number: '02',
+    title: 'World models & memory',
+    text: 'What internal state lets an agent predict consequences, retain spatial context, and plan beyond the next step?',
+  },
+  {
+    number: '03',
+    title: 'Generalization',
+    text: 'Which data and learning objectives help VLA systems transfer across environments, embodiments, and tasks?',
+  },
+];
+
 export default function About() {
   return (
     <>
-      {/* About Section */}
-      <section id="about" className="mb-14">
-        <h2 className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-accent">
-          <span className="h-px w-6 bg-accent/40"></span>关于我
+      <section id="top" className="hero-section">
+        <div className="status-pill"><span /> Currently exploring Embodied AI &amp; VLA</div>
+        <h2 className="hero-title">
+          From mathematical<br />structures to agents<br />that <em>act.</em>
         </h2>
-        <div className="mt-5 space-y-4 text-[15px] leading-relaxed text-gray-500">
-          <p>
-            我是 <span className="font-medium text-ink">Xinyu Zheng</span>，复旦大学23级本科生，在数学科学学院完成了三年的基础数学学习，刚刚进入AI方面的学习。目前对LLM，agent 自进化较为感兴趣。
-            希望做一些有意义或有趣的研究。
-          </p>
-          <p>
-            出于对LLM底层逻辑的好奇，目前正在学习《build LLM from scratch》，相关学习代码正在同步github中。
-          </p>
+        <p className="hero-copy">
+          I am a senior undergraduate at Fudan University, moving from pure mathematics toward embodied intelligence. My current interests lie in <strong>Vision–Language–Action models</strong>, world models, and the path from visual prediction to grounded decision-making.
+        </p>
+        <div className="hero-actions">
+          <a href="#questions" className="primary-button">Explore my questions <Arrow /></a>
+          <a href="mailto:23307110147@m.fudan.edu.cn" className="text-button">Start a conversation <Arrow /></a>
         </div>
       </section>
 
-      {/* Collaboration CTA */}
-      <section id="collab" className="mb-14">
-        <div className="rounded-2xl bg-accent-soft/70 p-6 ring-1 ring-accent/10">
-          <h3 className="font-serif text-lg font-semibold text-accent-dark">欢迎合作</h3>
-          <p className="mt-2 text-[15px] leading-relaxed text-gray-500">
-            我认为与他人交流是一个非常好的学习方式，欢迎交流。
-          </p>
-          <a href="mailto:23307110147@m.fudan.edu.cn" className="mt-4 inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2 text-sm font-medium text-white transition-colors hover:bg-accent-dark">
-            取得联系
-            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
-          </a>
+      <section id="about" className="content-section border-top">
+        <div className="section-label">About / 关于我</div>
+        <div className="section-grid">
+          <h2 className="section-heading">A mathematical foundation,<br />a new research direction.</h2>
+          <div className="body-copy space-y-5">
+            <p>
+              I am a 2023-entry undergraduate in the School of Mathematical Sciences at Fudan University, with an exchange semester at HKUST. Three years of mathematical training taught me to value abstraction, precise reasoning, and questions that survive beyond a single benchmark.
+            </p>
+            <p>
+              In 2026, I shifted my focus toward AI. I am now building the technical foundation needed for research in embodied intelligence, while studying how video generation, multimodal models, and world models can support agents that understand the effects of their actions.
+            </p>
+            <p className="callout">
+              I am early in this transition and do not want to overstate it. What I can offer is a strong mathematical base, sustained curiosity, and the willingness to turn difficult questions into concrete experiments.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* CV */}
-      <section id="cv" className="mb-14">
-        <h2 className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-accent">
-          <span className="h-px w-6 bg-accent/40"></span>简历
-        </h2>
-        <a href="#" className="group mt-5 flex items-center justify-between rounded-xl border border-black/5 bg-white px-5 py-4 shadow-sm transition-all hover:border-accent/30 hover:shadow-md">
-          <span className="flex items-center gap-3">
-            <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent-soft text-accent">
-              <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.8"><path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
-            </span>
-            <span>
-              <span className="block text-[15px] font-medium text-ink">完整简历 (CV)</span>
-              <span className="block text-xs text-gray-500">PDF · 更新于 2026 年 7 月</span>
-            </span>
-          </span>
-          <svg className="h-5 w-5 text-gray-500 transition-transform group-hover:translate-x-1 group-hover:text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
-        </a>
+      <section id="questions" className="content-section border-top">
+        <div className="section-label">Research questions / 研究问题</div>
+        <div className="section-grid">
+          <div>
+            <h2 className="section-heading">What I want to understand.</h2>
+            <p className="mt-4 max-w-sm text-[15px] leading-7 text-slate-500">
+              These are working questions, not claims of solved problems. They guide what I read, reproduce, and hope to investigate with experienced collaborators.
+            </p>
+          </div>
+          <div className="question-list">
+            {questions.map((question) => (
+              <article className="question-item" key={question.number}>
+                <span className="question-number">{question.number}</span>
+                <div>
+                  <h3>{question.title}</h3>
+                  <p>{question.text}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="content-section border-top">
+        <div className="section-label">Trajectory / 经历</div>
+        <div className="timeline">
+          <article>
+            <span>2023 — 2027</span>
+            <h3>Fudan University</h3>
+            <p>B.S. candidate, School of Mathematical Sciences</p>
+          </article>
+          <article>
+            <span>Exchange</span>
+            <h3>HKUST</h3>
+            <p>One semester of academic exchange</p>
+          </article>
+          <article>
+            <span>2026 — Now</span>
+            <h3>Transition to AI</h3>
+            <p>Embodied AI · VLA · World Models</p>
+          </article>
+        </div>
       </section>
     </>
   );
