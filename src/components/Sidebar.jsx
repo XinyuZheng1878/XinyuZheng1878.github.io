@@ -28,8 +28,9 @@ export default function Sidebar() {
         <nav className="mt-9" aria-label="页面导航">
           <a className="nav-link" href="#about"><span>01</span> About</a>
           <a className="nav-link" href="#questions"><span>02</span> Questions</a>
-          <a className="nav-link" href="#work"><span>03</span> Selected work</a>
-          <a className="nav-link" href="#contact"><span>04</span> Contact</a>
+          <a className="nav-link" href="#/blog"><span>03</span> Blog</a>
+          <a className="nav-link" href="#work"><span>04</span> Selected work</a>
+          <a className="nav-link" href="#contact"><span>05</span> Contact</a>
         </nav>
 
         <div className="mt-auto pt-10">
