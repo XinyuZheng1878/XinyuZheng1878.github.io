@@ -1,9 +1,10 @@
-import { useEffect, useState } from 'react';
+import { lazy, Suspense, useEffect, useState } from 'react';
 import Sidebar from './components/Sidebar';
 import About from './components/About';
 import Projects from './components/Projects';
 import BlogPreview from './components/BlogPreview';
-import Blog from './components/Blog';
+
+const Blog = lazy(() => import('./components/Blog'));
 
 function getRoute() {
   return decodeURIComponent(window.location.hash.replace(/^#\/?/, '')).split('/').filter(Boolean);
@@ -14,15 +15,22 @@ function App() {
 
   useEffect(() => {
     const handleRoute = () => {
-      setRoute(getRoute());
-      window.scrollTo({ top: 0, behavior: 'instant' });
+      const nextRoute = getRoute();
+      setRoute(nextRoute);
+      if (nextRoute[0] !== 'blog' || !nextRoute[2]) {
+        window.scrollTo({ top: 0, behavior: 'instant' });
+      }
     };
     window.addEventListener('hashchange', handleRoute);
     return () => window.removeEventListener('hashchange', handleRoute);
   }, []);
 
   if (route[0] === 'blog') {
-    return <Blog slug={route[1]} />;
+    return (
+      <Suspense fallback={<main className="article-container" role="status">正在加载文章…</main>}>
+        <Blog slug={route[1]} section={route[2]} />
+      </Suspense>
+    );
   }
 
   return (

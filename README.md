@@ -10,7 +10,7 @@ Personal academic homepage built with React, Vite, and Tailwind CSS.
 4. Change `draft: true` to `draft: false`, or remove that line.
 5. Commit and push to `main`. GitHub Actions will build and publish the site automatically.
 
-Supported Markdown includes headings, lists, links, blockquotes, code blocks, tables, task lists, and strikethrough.
+Supported Markdown includes headings, lists, links, blockquotes, code blocks, tables, task lists, and strikethrough. Use `$...$` for inline math and `$$...$$` for display math. Heading anchors such as `[Section](#section)` work as shareable article links, including in a table of contents.
 
 ## Local development
 

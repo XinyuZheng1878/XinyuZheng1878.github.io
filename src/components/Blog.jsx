@@ -1,6 +1,10 @@
 import { useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+import rehypeSlug from 'rehype-slug';
+import 'katex/dist/katex.min.css';
 import { articles, formatDate } from '../blog';
 
 const ArrowLeft = () => (
@@ -57,8 +61,23 @@ function BlogIndex() {
   );
 }
 
-function Article({ article }) {
+function scrollToSection(section) {
+  const heading = document.getElementById(section);
+  if (heading) {
+    heading.scrollIntoView({ behavior: 'instant', block: 'start' });
+    heading.setAttribute('tabindex', '-1');
+    heading.focus({ preventScroll: true });
+  }
+}
+
+function Article({ article, section }) {
   useEffect(() => { document.title = `${article.title} | Xinyu Zheng`; }, [article.title]);
+
+  useEffect(() => {
+    if (!section) return;
+    const frame = window.requestAnimationFrame(() => scrollToSection(section));
+    return () => window.cancelAnimationFrame(frame);
+  }, [article.slug, section]);
 
   return (
     <div className="blog-page article-page">
@@ -77,14 +96,34 @@ function Article({ article }) {
           </div>
         </header>
         <article className="prose">
-          <ReactMarkdown remarkPlugins={[remarkGfm]}>{article.body}</ReactMarkdown>
+          <ReactMarkdown
+            remarkPlugins={[remarkGfm, remarkMath]}
+            rehypePlugins={[rehypeKatex, rehypeSlug]}
+            components={{
+              a: ({ href, title, children }) => (
+                <a
+                  href={href?.startsWith('#') ? `#/blog/${article.slug}/${href.slice(1)}` : href}
+                  title={title}
+                  onClick={(event) => {
+                    if (href?.startsWith('#') && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey) {
+                      scrollToSection(decodeURIComponent(href.slice(1)));
+                    }
+                  }}
+                >
+                  {children}
+                </a>
+              ),
+            }}
+          >
+            {article.body}
+          </ReactMarkdown>
         </article>
       </main>
     </div>
   );
 }
 
-export default function Blog({ slug }) {
+export default function Blog({ slug, section }) {
   if (!slug) return <BlogIndex />;
   const article = articles.find((item) => item.slug === slug);
   if (!article) {
@@ -99,5 +138,5 @@ export default function Blog({ slug }) {
       </div>
     );
   }
-  return <Article article={article} />;
+  return <Article article={article} section={section} />;
 }
